@@ -38,7 +38,19 @@
               <button
                 [disabled]="loginForm.invalid"
                 class="btn btn-primary submit-btn btn-block"
-                type="submit">Login</button>
+                type="submit"
+              *ngIf="!cargando">
+                Login
+              </button>
+
+              <button
+                [disabled]="true"
+                class="btn btn-primary submit-btn btn-block"
+                *ngIf="cargando"
+                type="button">
+              <i class="fa fa-spin fa-sync"></i>
+              Espere...
+              </button>
             </div>
 
 
